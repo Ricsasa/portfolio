@@ -1,5 +1,67 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
+
+import react from '@astrojs/react';
+
+import tailwindcss from '@tailwindcss/vite';
+
+import partytown from '@astrojs/partytown';
+
+import sitemap from '@astrojs/sitemap';
+
+import reactI18next from "astro-react-i18next";
 
 // https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  integrations: [react(), partytown(), sitemap(),
+
+  reactI18next({
+    defaultLocale: "es-MX",
+    locales: ["en-US", "es-MX"],
+    namespaces:['common', 'professional-experiences']
+  }),
+  ],
+
+  vite: {
+    plugins: [tailwindcss()]
+  },
+
+  fonts: [
+    {
+      provider: fontProviders.google(),
+      name: "Literata",
+      cssVariable: "--font-literata",
+      fallbacks: ["serif"],
+      weights: ["100 900"],
+      styles: ["normal", "italic"]
+    },
+    {
+      provider: fontProviders.google(),
+      name: "Nunito Sans",
+      cssVariable: "--font-nunito",
+      fallbacks: ["sans-serif"],
+      weights: ["100 900"],
+      styles: ["normal", "italic"]
+    },
+    /*
+    {
+      provider: fontProviders.google(),
+      name: "Roboto Mono",
+      cssVariable: "--font-roboto",
+      fallbacks: ["monospace"],
+      weights: ["100 900"],
+      styles: ["normal", "italic"]
+    },
+    */
+    {
+      provider: fontProviders.google(),
+      name: "Share Tech Mono",
+      cssVariable: "--font-share-tech",
+      fallbacks: ["monospace"],
+      weights: ["100 900"],
+      styles: ["normal", "italic"]
+    }
+  ]
+
+
+});

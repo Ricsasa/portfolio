@@ -1,0 +1,66 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  side?: "left" | "right";
+}
+
+const {
+  title,
+  subtitle,
+  side = "left",
+} = Astro.props;
+
+const isLeft = side === "left";
+---
+
+<article
+  class:list={[
+    "gsap-reveal-card",
+    "relative rounded-2xl border border-custom-secondary/20 bg-white/95 p-6 shadow-sm",
+    "transition-shadow duration-200 hover:shadow-md",
+    isLeft ? "ml-4" : "mr-4",
+  ]}
+>
+  <!-- Timeline line -->
+  <div
+    class:list={[
+      "absolute inset-y-0 w-px bg-custom-secondary/30",
+      isLeft ? "-left-4" : "-right-4",
+    ]}
+    aria-hidden="true"
+  >
+    
+    <span
+      class="
+        absolute left-1/2 top-1/2
+        size-3
+        -translate-x-1/2 -translate-y-1/2
+        rounded-full
+        border-2 border-white
+        bg-custom-tertiary
+        ring-2 ring-custom-tertiary
+        
+      "
+    ></span>
+  </div>
+
+  <header class="mb-5 border-b border-custom-tertiary/70 pb-4">
+    <h3 class="font-mono text-xl font-medium tracking-tight text-custom-secondary">
+      {title}
+    </h3>
+
+    {
+      subtitle && (
+        <p class="mt-1 text-sm font-medium text-custom-neutral/80">
+          {subtitle}
+        </p>
+      )
+    }
+  </header>
+
+  <!-- Content -->
+  <div class="text-sm leading-relaxed text-custom-neutral md:text-base">
+    <slot />
+  </div>
+</article>

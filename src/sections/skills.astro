@@ -1,0 +1,59 @@
+---
+import i18n from "i18next";
+
+import { CogIcon } from "@heroicons/react/24/outline";
+
+import SkillCard from "../components/SkillCard.astro";
+import PinnedSection from "../components/PinnedSection.astro";
+
+const languages = [
+    "React",
+    "Next.js ",
+    "Node.js ",
+    "Express",
+    "NestJS",
+    "PHP (Laravel)",
+    "React Native",
+    "Redux",
+    "Zustand",
+    "GraphQL",
+    "Tanstack React Query",
+    "Typescript",
+    "Ruby on Rails",
+];
+
+const dataStores = ["Elasticsearch", "MySQL", "PostgreSQL", "Redis"];
+
+const platforms = [
+    "Docker",
+    "Kubernetes",
+    "AWS ",
+    "GCP",
+    "Kafka",
+    "Github platform (Actions, pages)",
+];
+
+const ia = ["Claude Code", "Gemini"];
+---
+
+<PinnedSection
+    id="skills"
+    title={i18n.t("skills-label")}
+    side="right"
+    class="bg-linear-to-b from-custom-primary/70 to-custom-primary/20"
+>
+    <CogIcon
+        slot="title-icon"
+        className="h-10 w-10 md:h-22 md:w-22 text-custom-secondary"
+    />
+
+    <div class="flex flex-col gap-8">
+        <SkillCard
+            title={i18n.t("languages-and-framework-label")}
+            skills={languages}
+        />
+        <SkillCard title={i18n.t("datastores-label")} skills={dataStores} />
+        <SkillCard title={i18n.t("platform-cloud-label")} skills={platforms} />
+        <SkillCard title={i18n.t("ai-tools-label")} skills={ia} />
+    </div>
+</PinnedSection>

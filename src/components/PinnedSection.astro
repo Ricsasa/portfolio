@@ -1,0 +1,72 @@
+---
+interface Props {
+    id: string;
+    title: string;
+    side?: "left" | "right";
+    class?: string;
+}
+
+const { id, title, side = "left", class: className } = Astro.props;
+const isTitleOnLeft = side === "left";
+---
+
+<section id={id} data-pinned-section class:list={["px-12 py-12", className]}>
+    <div class="grid gap-4 md:grid-cols-2">
+        <div
+            data-pinned-title
+            class:list={[
+                "flex self-start gap-4",
+                isTitleOnLeft
+                    ? "md:order-1 "
+                    : "md:order-2  md:justify-self-end",
+            ]}
+            id={"data-"+id}
+        >
+            <slot name="title-icon" />
+            <h2
+                class="text-3xl font-extralight uppercase text-custom-secondary font-mono md:text-8xl"
+            >
+                {title}
+            </h2>
+        </div>
+
+        <div
+            data-pinned-content
+            class:list={isTitleOnLeft ? "md:order-2" : "md:order-1"}
+        >
+            <slot />
+        </div>
+    </div>
+</section>
+
+<script>
+    import gsap from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.querySelectorAll<HTMLElement>("[data-pinned-section]").forEach(
+        (section) => {
+            const title = section.querySelector<HTMLElement>("[data-pinned-title]");
+
+                console.log(title)
+
+            if (!title) return;
+
+            const media = gsap.matchMedia();
+
+            media.add("(min-width: 768px)", () => {
+                const trigger = ScrollTrigger.create({
+                    trigger: title,
+                    start: "top top+=90",
+                    endTrigger: section,
+                    end: "bottom bottom",
+                    pin: true,
+                    pinSpacing: false,
+                });
+
+                return () => trigger.kill();
+            });
+        },
+    );
+</script>

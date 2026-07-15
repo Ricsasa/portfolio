@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+    --font-serif: var(--font-literata), serif;
+    --font-sans: var(--font-nunito), sans-serif;
+    --font-mono: var(--font-share-tech), monospace;
+}
+
+@theme {
+  --color-custom-primary: #4A7C59;
+  --color-custom-secondary: #6B6358;
+  --color-custom-tertiary: #C4A66A;
+  --color-custom-neutral: #4A4E4A;
+
+  --color-custom-whatsapp-green: #25d366;
+
+  --spacing-8xl: 90rem;
+  --spacing-9xl: 100rem;
+}
+
+[data-theme="dark"] li:not(.menu-title, .menu-disabled)> :not(ul, .menu-title, .collapse, .accordion-content, .btn).menu-active {
+  background-color: var(--color-primary);
+  color: var(--color-primary-content);
+}
+
+[data-theme="black"] li:not(.menu-title, .menu-disabled)> :not(ul, .menu-title, .collapse, .accordion-content, .btn).menu-active {
+  background-color: var(--color-primary);
+  color: var(--color-primary-content);
+}
+
+[data-theme="luxury"] li:not(.menu-title, .menu-disabled)> :not(ul, .menu-title, .collapse, .accordion-content, .btn).menu-active {
+  background-color: var(--color-primary);
+  color: var(--color-primary-content);
+}
+
+/*
+  Motion Card Animation
+*/
+.gsap-ready .gsap-reveal-card {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(40px);
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gsap-ready .gsap-reveal-card {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}
+
+@plugin "@iconify/tailwind4";

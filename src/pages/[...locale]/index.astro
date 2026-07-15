@@ -1,0 +1,30 @@
+---
+import "../../styles/global.css";
+
+import { buildStaticPaths } from "astro-react-i18next/utils";
+
+
+import Layout from "../../layouts/Layout.astro";
+import Body from "../../components/Body.astro";
+
+import Header from "../../components/Header.jsx";
+
+import Summary from "../../sections/summary.astro"
+import ProfessionalExperience from "../../sections/professional-experience.astro";
+import Skills from "../../sections/skills.astro";
+import Showcase from "../../sections/showcase.astro";
+
+export function getStaticPaths() {
+  return buildStaticPaths();
+}
+---
+
+<Layout>
+	<Body>
+		<Header client:load />
+		<Summary />
+		<Showcase />
+		<ProfessionalExperience />
+		<Skills />
+	</Body>
+</Layout>

@@ -1,0 +1,115 @@
+---
+import i18n from "i18next";
+
+import { PresentationChartLineIcon } from "@heroicons/react/24/outline";
+
+import ProjectCard from "../components/ProjectCard.astro";
+---
+
+<section id="showcase" class="relative min-h-svh w-full overflow-hidden bg-linear-to-b from-custom-primary/30 to-custom-primary/40 py-12">
+    <div class="title-section z-[-10] flex w-full md:justify-center gap-4 px-12">
+        <PresentationChartLineIcon
+            slot="title-icon"
+            className="h-12 w-12 md:h-22 md:w-22 text-custom-secondary"
+        />
+
+        <h2
+            class="text-3xl font-extralight uppercase text-custom-secondary font-mono md:text-8xl"
+        >
+            {i18n.t("showcase-label")}
+        </h2>
+    </div>
+    <div id="feature-cards" class="overflow-hidden px-6 mt-30 md:px-12">
+        <div class="feature-cards-track flex w-max gap-12">
+            <ProjectCard
+                title="My Full Stack Application"
+                href="https://example.com"
+                alt="Screenshot of the My Full Stack Application homepage"
+                description="A full-stack web application built with React, Node.js, TypeScript, and AWS, designed with scalability and performance in mind."
+            />
+            <ProjectCard
+                title="My Full Stack Application"
+                href="https://example.com"
+                alt="Screenshot of the My Full Stack Application homepage"
+                description="A full-stack web application built with React, Node.js, TypeScript, and AWS, designed with scalability and performance in mind."
+            />
+            <ProjectCard
+                title="My Full Stack Application"
+                href="https://example.com"
+                alt="Screenshot of the My Full Stack Application homepage"
+                description="A full-stack web application built with React, Node.js, TypeScript, and AWS, designed with scalability and performance in mind."
+            />
+            
+        </div>
+    </div>
+</section>
+
+<style>
+    #feature-cards :global(article) {
+        flex: 0 0 auto;
+        width: min(120vw, 28rem);
+    }
+
+    @media (min-width: 768px) {
+        #feature-cards :global(article) {
+            width: min(78vw, 48rem);
+        }
+    }
+</style>
+
+<script>
+    import gsap from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const showcase = document.querySelector<HTMLElement>("#showcase");
+    const title = showcase?.querySelector<HTMLElement>(".title-section");
+    const cardsViewport = showcase?.querySelector<HTMLElement>("#feature-cards");
+    const cardsTrack = showcase?.querySelector<HTMLElement>(".feature-cards-track");
+
+    if (showcase && title && cardsViewport && cardsTrack) {
+        const media = gsap.matchMedia();
+        const getScrollDistance = () =>
+            Math.max(cardsTrack.scrollWidth - cardsViewport.clientWidth, 1);
+
+console.log(getScrollDistance())
+
+        media.add(
+            "all",
+            () => {
+                const titlePin = ScrollTrigger.create({
+                    trigger: title,
+                    start: "top top+=90",
+                    endTrigger: showcase,
+                    end: "bottom bottom",
+                    pin: true,
+                    pinSpacing: false,
+                });
+
+                const cardsTween = gsap.to(cardsTrack, {
+                    x: () => -getScrollDistance(),
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: cardsViewport,
+                        start: () =>
+                            window.innerWidth < 768
+                                ? "top top+=160"
+                                : "top top+=202",
+                        end: () => `+=${getScrollDistance()}`,
+                        pin: true,
+                        scrub: 1,
+                        anticipatePin: 1,
+                        invalidateOnRefresh: true,
+                    },
+                });
+
+                return () => {
+                    titlePin.kill();
+                    cardsTween.scrollTrigger?.kill();
+                    cardsTween.kill();
+                };
+            },
+        );
+    }
+</script>

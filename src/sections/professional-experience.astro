@@ -1,0 +1,41 @@
+---
+import i18n from "i18next";
+
+import { BuildingOffice2Icon } from "@heroicons/react/24/outline";
+
+import TimelineCard from "../components/TimelineCard.astro";
+import PinnedSection from "../components/PinnedSection.astro";
+
+const professionalExperiences = i18n.t("experiences", {
+    ns: "professional-experiences",
+    returnObjects: true,
+});
+---
+
+<PinnedSection
+    id="professional-experience"
+    title={i18n.t("professional-experience-label")}
+    class="bg-linear-to-b from-custom-primary/40 to-custom-primary/70"
+>
+    <BuildingOffice2Icon
+        slot="title-icon"
+        className="h-12 w-12 md:h-22 md:w-22 text-custom-secondary"
+    />
+
+    <div class="flex flex-col gap-8">
+        {
+            professionalExperiences.map(item => (
+                <TimelineCard 
+                    title={`${item.title} ${item.company ? ` at ${item.company}` : ''}`}
+                    subtitle={item.period}
+                >
+                    <ul class="list-disc space-y-2 pl-5">
+                        {item.highlights.map((highlight) => (
+                            <li>{highlight}</li>
+                        ))}
+                    </ul>
+                </TimelineCard>
+            ))
+        }
+    </div>
+</PinnedSection>

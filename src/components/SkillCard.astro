@@ -1,0 +1,46 @@
+---
+interface Props {
+  title: string;
+  skills: string[];
+}
+
+const {
+  title,
+  skills,
+} = Astro.props;
+---
+
+<article
+  class="
+    gsap-reveal-card
+    rounded-2xl
+    border border-custom-secondary/20
+    bg-white/95
+    p-6
+    shadow-sm
+    transition-shadow duration-200
+    hover:shadow-md
+  "
+>
+  <!-- Header -->
+  <header class="mb-5 border-b border-custom-tertiary/70 pb-4">
+    <h3 class="font-mono text-xl font-medium tracking-tight text-custom-secondary">
+      {title}
+    </h3>
+  </header>
+
+  <!-- Skills -->
+  <ul class="grid grid-cols-2 gap-x-6 gap-y-3">
+    {
+      skills.map((skill) => (
+        <li class="flex items-center gap-2 text-sm text-custom-neutral md:text-base">
+          <span
+            class="size-1.5 shrink-0 rounded-full bg-custom-tertiary"
+            aria-hidden="true"
+          />
+          <span>{skill}</span>
+        </li>
+      ))
+    }
+  </ul>
+</article>
