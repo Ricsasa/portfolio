@@ -8,5 +8,25 @@
     "skills-label": "Skills",
     "education-label": "Education and Certifications",
     "languages-label": "Languages",
+    "education-items": [
+        {
+            "title": "Certified SCRUM Master",
+            "institution": "Scrum Study",
+            "location": "",
+            "period": "2018-2021"
+        },
+        {
+            "title": "Bachelor Degree",
+            "institution": "Information Technology",
+            "location": "UNAM-Mexico",
+            "period": "2008-2012"
+        }
+    ],
+    "language-items": [
+        "Spanish - Native",
+        "English - Full professional proficiency",
+        "Portuguese - Elementary proficiency",
+        "French - Elementary proficiency"
+    ],
     "summary-text": "Focused on developing scalable and performant systems."
 }

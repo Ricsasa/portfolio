@@ -8,6 +8,26 @@
     "skills-label": "Habilidades",
     "education-label": "Educación y certificaciones",
     "languages-label": "Idiomas",
+    "education-items": [
+        {
+            "title": "Scrum Master certificado",
+            "institution": "Scrum Study",
+            "location": "",
+            "period": "2018-2021"
+        },
+        {
+            "title": "Licenciatura",
+            "institution": "Tecnologías de la Información",
+            "location": "UNAM-México",
+            "period": "2008-2012"
+        }
+    ],
+    "language-items": [
+        "Español - Nativo",
+        "Inglés - Competencia profesional completa",
+        "Portugués - Competencia elemental",
+        "Francés - Competencia elemental"
+    ],
     "summary-text": "Enfocado en el desarrollo de sistemas escalables y de alto rendimiento.",
     "languages-and-framework-label": "Lenguajes y frameworks",
     "datastores-label": "Bases de Datos",
