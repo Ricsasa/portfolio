@@ -33,5 +33,9 @@
         "Portuguese - Elementary proficiency",
         "French - Elementary proficiency"
     ],
-    "summary-text": "Focused on developing scalable and performant systems."
+    "summary-text": "Focused on developing scalable and performant systems.",
+    "languages-and-framework-label": "Languages and Frameworks",
+    "datastores-label": "Databases",
+    "platform-cloud-label": "Platforms and Cloud",
+    "ai-tools-label": "AI"
 }
