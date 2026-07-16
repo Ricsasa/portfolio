@@ -6,6 +6,8 @@ import i18n from "i18next";
 import { buildStaticPaths } from "astro-react-i18next/utils";
 import { Font } from "astro:assets";
 
+import Footer from "../components/Footer.astro";
+
 export function getStaticPaths() {
   return buildStaticPaths();
 }
@@ -30,6 +32,7 @@ export function getStaticPaths() {
 	<body>
 
 		<slot />
+		<Footer />
 
 	</body>
 </html>
