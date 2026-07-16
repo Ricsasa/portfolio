@@ -1,3 +1,26 @@
 {
-    
+  "projects": [
+    {
+      "title": "Lumina Estudio Láser",
+      "description": "Informational website for a laser tattoo removal studio. (Astro, React, Tailwind)",
+      "category": "Informational Website",
+      "year": "2026",
+      "href": "http://luminaestudiolaser.com",
+      "image": "/projects/lumina-landing.png"
+    },
+    {
+      "title": "Lumina Estudio Láser (Administration System)",
+      "description": "Client and medical record management system. (Laravel, React, MySQL, Tailwind)",
+      "category": "Administration System",
+      "year": "2026",
+      "image": "/projects/lumina-admin.png"
+    },
+    {
+      "title": "YOUR BRAND HERE!",
+      "description": "Want to work together? Let's get in touch!",
+      "category": "Opportunity",
+      "year": "2026",
+      "href": "mailto:ricsasa201@gmail.com"
+    }
+  ]
 }
