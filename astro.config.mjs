@@ -13,12 +13,15 @@ import reactI18next from "astro-react-i18next";
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://ricsasa.work',
+  base:'',
+
   integrations: [react(), partytown(), sitemap(),
 
   reactI18next({
     defaultLocale: "es-MX",
     locales: ["en-US", "es-MX"],
-    namespaces:['common', 'professional-experiences']
+    namespaces:['common', 'professional-experiences', 'projects']
   }),
   ],
 
@@ -62,6 +65,5 @@ export default defineConfig({
       styles: ["normal", "italic"]
     }
   ]
-
 
 });

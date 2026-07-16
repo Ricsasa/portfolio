@@ -1,0 +1,40 @@
+{
+    "projects": [
+        {
+            "title": "Lumina Estudio Láser",
+            "description": "Página informativa para estudio de eliminación de tatuajes. (Astro, React, Tailwind)",
+            "category": "Página informativa",
+            "year": "2026",
+            "href": "http://luminaestudiolaser.com",
+            "image": "/projects/lumina-landing.png"
+        },
+        {
+            "title": "Lumina Estudio Láser (Sistema de Administración)",
+            "description": "Control de clientes y expedientes (Laravel, React, MySQL, Tailwind)",
+            "category": "Sistema de administración",
+            "year": "2026",
+            "image": "/projects/lumina-admin.png"
+        },
+        {
+            "title": "Lumina Estudio Láser (Sistema de Administración)",
+            "description": "Control de clientes y expedientes (Laravel, React, MySQL, Tailwind)",
+            "category": "Sistema de administración",
+            "year": "2026",
+            "image": "/projects/lumina-admin.png"
+        },
+        {
+            "title": "Lumina Estudio Láser (Sistema de Administración)",
+            "description": "Control de clientes y expedientes (Laravel, React, MySQL, Tailwind)",
+            "category": "Sistema de administración",
+            "year": "2026",
+            "image": "/projects/lumina-admin.png"
+        },
+        {
+            "title": "TU MARCA AQUÍ!",
+            "description": "¿Quieres trabajar conmigo? ¡Contáctame!",
+            "category": "Oportunidad",
+            "year": "2026",
+            "href": "mailto:ricsasa201@gmail.com"
+        }
+    ]
+}

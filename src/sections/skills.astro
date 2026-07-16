@@ -19,10 +19,9 @@ const languages = [
     "GraphQL",
     "Tanstack React Query",
     "Typescript",
-    "Ruby on Rails",
 ];
 
-const dataStores = ["Elasticsearch", "MySQL", "PostgreSQL", "Redis"];
+const dataStores = ["MySQL", "PostgreSQL", "Elasticsearch", "Redis"];
 
 const platforms = [
     "Docker",
@@ -40,11 +39,13 @@ const ia = ["Claude Code", "Gemini"];
     id="skills"
     title={i18n.t("skills-label")}
     side="right"
-    class="bg-linear-to-b from-custom-primary/70 to-custom-primary/20"
+    class="bg-alice-blue-50"
+    color="#0d1617"
+    colorOut="#eff5f6"
 >
     <CogIcon
         slot="title-icon"
-        className="h-10 w-10 md:h-22 md:w-22 text-custom-secondary"
+        className="h-6 w-6 md:h-10 md:w-10 text-alice-blue-400"
     />
 
     <div class="flex flex-col gap-8">

@@ -5,9 +5,8 @@ import { useTranslation } from "react-i18next";
 import {
     Button,
 } from '@headlessui/react'
+
 import { XMarkIcon, LanguageIcon } from '@heroicons/react/24/outline'
-
-
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -50,9 +49,7 @@ export default function Header() {
                     <div className={`mx-auto w-full  flex items-center justify-end px-6 gap-8 md:px-12 py-2 h-20`}
                     >
                         <button
-                            className="p-3 rounded-full bg-custom-tertiary/5 hover:bg-custom-primary/10 transition-colors cursor-pointer text-custom-secondary focus:outline-none focus:ring-2 focus:ring-custom-primary/50
-                            
-                            "
+                            className="p-3 rounded-full bg-alice-blue-950/5 hover:bg-alice-blue-50/10 transition-colors cursor-pointer text-alice-blue-400 focus:outline-none focus:ring-2 focus:ring-alice-blue-50/50"
                         >
                             <a href={i18n.language === 'es-MX' ? '/en-US' : '/'}>
                                 <div className='flex text-xs md:text-base font-mono'>
@@ -61,14 +58,14 @@ export default function Header() {
                                 </div>
                             </a>
                         </button>
-                        <Button className={`group relative inline-flex items-center justify-center rounded-full px-5 py-2.5 font-medium transition-all duration-300 ease-in-out cursor-pointer focus:outline-none focus:ring-2 focus:ring-custom-primary/50
-                                bg-custom-tertiary/10 text-custom-secondary hover:bg-custom-primary/20 
+                        <Button className={`group relative inline-flex items-center justify-center rounded-full px-5 py-2.5 font-medium transition-all duration-300 ease-in-out cursor-pointer focus:outline-none focus:ring-2 focus:ring-alice-blue-50/50
+                                bg-alice-blue-950/10 text-alice-blue-400 hover:bg-alice-blue-50/20 
                                 text-xs md:text-base font-mono`}>
                             {t("download-label")}
                         </Button>
                         <Button
-                            className={`group relative inline-flex items-center justify-center rounded-full px-5 py-2.5 font-medium transition-all duration-300 ease-in-out cursor-pointer focus:outline-none focus:ring-2 focus:ring-custom-primary/50
-                                bg-custom-tertiary/10 text-custom-secondary hover:bg-custom-primary/20 `}
+                            className={`group relative inline-flex items-center justify-center rounded-full px-5 py-2.5 font-medium transition-all duration-300 ease-in-out cursor-pointer focus:outline-none focus:ring-2 focus:ring-alice-blue-50/50
+                                bg-alice-blue-950/10 text-alice-blue-400 hover:bg-alice-blue-50/20 `}
                             onClick={() => setIsOpen(!isOpen)}
                         >
                             <span className="text-xs md:text-base tracking-wide font-mono">Menú</span>
@@ -88,14 +85,14 @@ export default function Header() {
 
             {/* Sidebar Drawer */}
             <aside
-                className={`fixed top-0 right-0 h-full w-full sm:w-100 md:w-1/2 bg-custom-tertiary shadow-2xl z-120 transform transition-transform duration-300 ease-in-out sm:rounded-l-[32px] border-l border-custom-primary/10 flex flex-col
+                className={`fixed top-0 right-0 h-full w-full sm:w-100 md:w-1/2 bg-alice-blue-950 shadow-2xl z-120 transform transition-transform duration-300 ease-in-out sm:rounded-l-[32px] border-l border-alice-blue-50/10 flex flex-col
                 ${isOpen ? 'translate-x-0' : 'translate-x-full'} 
                 `}
             >
-                <div className='flex justify-end items-center px-8 py-2 md:py-6 border-b border-custom-primary/10 '>
+                <div className='flex justify-end items-center px-8 py-2 md:py-6 border-b border-alice-blue-50/10 '>
 
                     <Button
-                        className='p-3 rounded-full hover:text-custom-secondary-tertiary/20 transition-colors cursor-pointer text-custom-secondary focus:outline-none focus:ring-2 focus:ring-custom-primary/50'
+                        className='p-3 rounded-full hover:text-alice-blue-400-tertiary/20 transition-colors cursor-pointer text-alice-blue-400 focus:outline-none focus:ring-2 focus:ring-alice-blue-50/50'
                         onClick={() => setIsOpen(false)}
                         aria-label="Cerrar menú"
                     >
@@ -110,7 +107,7 @@ export default function Header() {
                             <a
                                 key={i}
                                 href={item.href}
-                                className="px-4 py-2 rounded-2xl text-xl md:text-3xl font-extralight font-mono tracking-wide text-custom-secondary hover:bg-custom-secondary/20 transition-colors duration-200 uppercase"
+                                className="px-4 py-2 rounded-2xl text-xl md:text-3xl font-extralight font-mono tracking-wide text-alice-blue-400 hover:bg-alice-blue-400/20 transition-colors duration-200 uppercase"
                                 title={item.name}
                                 onClick={() => setIsOpen(false)}
                             >

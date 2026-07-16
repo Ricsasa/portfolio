@@ -5,9 +5,9 @@
       "title": "Professional Sabbatical",
       "period": "November 2025 – Present",
       "highlights": [
-        "Career transition focused on personal and professional development and freelance web development.",
-        "Built websites for a small business while expanding expertise in Astro, Laravel, GSAP, AWS, software architecture, and system design through hands-on projects and continuous learning.",
-        "Leveraged tools including Claude and Gemini to accelerate development while maintaining engineering quality through human review."
+        "Focused on professional growth through freelance web development and continuous learning.",
+        "Built websites while strengthening expertise in Astro, Laravel, GSAP, AWS, software architecture, and system design.",
+        "Accelerated development with Claude and Gemini while ensuring code quality through engineering review."
       ]
     },
     {
@@ -16,9 +16,9 @@
       "company": "Salesloft",
       "period": "April 2020 – November 2025",
       "highlights": [
-        "Delivered production-grade full-stack software for high-scale SaaS products using React, Node.js, TypeScript, GraphQL, Kubernetes, PostgreSQL, Elasticsearch, and GCP.",
-        "Partnered with cross-functional engineering teams to design, implement, deploy, and maintain reliable production systems.",
-        "Served as Technical Lead for the Salesloft Mobile application, using React Native, Zustand, and TypeScript."
+        "Built and maintained scalable SaaS applications using React, Node.js, TypeScript, GraphQL, Kubernetes, PostgreSQL, Elasticsearch, and GCP.",
+        "Collaborated with cross-functional teams to design, deploy, and maintain reliable production systems.",
+        "Led the Salesloft Mobile application using React Native, Zustand, and TypeScript."
       ]
     },
     {
@@ -27,7 +27,7 @@
       "company": "Tiempo Development",
       "period": "August 2017 – April 2020",
       "highlights": [
-        "Worked on a project for an international e-learning platform using React, Redux, GraphQL, and a backend supported by Node.js and Express, as well as AWS Lambda, AWS S3, Amazon DynamoDB, and PostgreSQL."
+        "Developed features for an e-learning platform using React, Redux, GraphQL, Node.js, Express, AWS Lambda, AWS S3, Amazon DynamoDB, and PostgreSQL."
       ]
     },
     {
@@ -36,8 +36,8 @@
       "company": "EPAM Systems",
       "period": "November 2016 – August 2017",
       "highlights": [
-        "Worked closely with Product Managers to define the strategy and implement a website redesign for the legal branch of a well-known news agency, using React, Redux, and the Foundation CSS Framework.",
-        "Built internal tools using Node.js, Express, and Puppeteer to automate the QA process for an Angular 2 project."
+        "Contributed to a legal news website redesign using React, Redux, and Foundation CSS.",
+        "Built QA automation tools with Node.js, Express, Puppeteer, and Angular 2."
       ]
     }
   ]

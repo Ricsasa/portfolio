@@ -19,10 +19,11 @@ const config = withMT({
         '8xl': '90rem', // Custom 8xl width (1440px)
         '9xl': '100rem', // Custom 9xl width (1600px)
       },
-      
+
     },
   },
   plugins: [],
+  darkMode: 'none',
 });
 
 export default config

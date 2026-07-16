@@ -5,39 +5,39 @@
       "title": "Periodo sabático profesional",
       "period": "Noviembre de 2025 – Actualidad",
       "highlights": [
-        "Transición profesional enfocada en el desarrollo personal y profesional, así como en el desarrollo web independiente.", 
-        "Creé sitios web para una pequeña empresa mientras ampliaba mi experiencia en Astro, Laravel, GSAP, AWS, arquitectura de software y diseño de sistemas mediante proyectos prácticos y aprendizaje continuo.",
-        "Aproveché herramientas como Claude y Gemini para acelerar el desarrollo, manteniendo la calidad de ingeniería mediante revisión humana."
+        "Enfoque en el crecimiento profesional mediante desarrollo web freelance y aprendizaje continuo.",
+        "Desarrollé sitios web mientras fortalecía mis conocimientos en Astro, Laravel, GSAP, AWS, arquitectura de software y diseño de sistemas.",
+        "Aceleré el desarrollo utilizando Claude y Gemini, manteniendo la calidad del código mediante revisiones de ingeniería."
       ]
     },
     {
       "id": "salesloft",
-      "title": "Ingeniero de software Fullstack",
+      "title": "Ingeniero Fullstack",
       "company": "Salesloft",
-      "period": "Abril de 2020 – Noviembre de 2025",
+      "period": "Abril 2020 – Noviembre 2025",
       "highlights": [
-        "Desarrollé software full-stack listo para producción para productos SaaS de alta escala con React, Node.js, TypeScript, GraphQL, Kubernetes, PostgreSQL, Elasticsearch y GCP.",
-        "Colaboré con equipos de ingeniería multidisciplinarios para diseñar, implementar, desplegar y mantener sistemas de producción confiables.",
-        "Me desempeñé como líder técnico de la aplicación móvil de Salesloft, utilizando React Native, Zustand y TypeScript."
+        "Desarrollé y mantuve aplicaciones SaaS escalables utilizando React, Node.js, TypeScript, GraphQL, Kubernetes, PostgreSQL, Elasticsearch y GCP.",
+        "Colaboré con equipos multidisciplinarios para diseñar, desplegar y mantener sistemas confiables en producción.",
+        "Lideré técnicamente la aplicación móvil de Salesloft utilizando React Native, Zustand y TypeScript."
       ]
     },
     {
       "id": "tiempo-development",
-      "title": "Ingeniero de software Fullstack",
+      "title": "Ingeniero Fullstack",
       "company": "Tiempo Development",
-      "period": "Agosto de 2017 – Abril de 2020",
+      "period": "Agosto 2017 – Abril 2020",
       "highlights": [
-        "Trabajé en un proyecto para una plataforma internacional de aprendizaje en línea con React, Redux y GraphQL, y un backend basado en Node.js y Express, además de AWS Lambda, AWS S3, Amazon DynamoDB y PostgreSQL."
+        "Desarrollé funcionalidades para una plataforma de e-learning utilizando React, Redux, GraphQL, Node.js, Express, AWS Lambda, AWS S3, Amazon DynamoDB y PostgreSQL."
       ]
     },
     {
       "id": "epam-systems",
       "title": "Desarrollador Frontend",
       "company": "EPAM Systems",
-      "period": "Noviembre de 2016 – Agosto de 2017",
+      "period": "Noviembre 2016 – Agosto 2017",
       "highlights": [
-        "Colaboré estrechamente con Product Managers para definir la estrategia e implementar el rediseño del sitio web de la división legal de una reconocida agencia de noticias, utilizando React, Redux y el framework CSS Foundation.",
-        "Desarrollé herramientas internas con Node.js, Express y Puppeteer para automatizar el proceso de QA de un proyecto en Angular 2."
+        "Participé en el rediseño de un sitio web del sector legal utilizando React, Redux y Foundation CSS.",
+        "Desarrollé herramientas de automatización para QA con Node.js, Express, Puppeteer y Angular 2."
       ]
     }
   ]

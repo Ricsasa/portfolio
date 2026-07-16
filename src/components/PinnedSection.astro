@@ -4,18 +4,26 @@ interface Props {
     title: string;
     side?: "left" | "right";
     class?: string;
+    color?: string;
+    colorOut?: string;
 }
 
-const { id, title, side = "left", class: className } = Astro.props;
+const { id, title, side = "left", class: className, color, colorOut } = Astro.props;
 const isTitleOnLeft = side === "left";
 ---
 
-<section id={id} data-pinned-section class:list={["px-12 py-12", className]}>
+<section
+    id={id}
+    data-pinned-section
+    data-color={color}
+    data-color-out={colorOut}
+    class:list={["px-12 py-12", className]}
+>
     <div class="grid gap-4 md:grid-cols-2">
         <div
             data-pinned-title
             class:list={[
-                "flex self-start gap-4",
+                "flex self-start gap-4 border-b border-alice-blue-400",
                 isTitleOnLeft
                     ? "md:order-1 "
                     : "md:order-2  md:justify-self-end",
@@ -24,7 +32,7 @@ const isTitleOnLeft = side === "left";
         >
             <slot name="title-icon" />
             <h2
-                class="text-3xl font-extralight uppercase text-custom-secondary font-mono md:text-8xl"
+                class="text-xl font-extralight uppercase text-alice-blue-400 font-mono md:text-3xl"
             >
                 {title}
             </h2>
@@ -48,10 +56,36 @@ const isTitleOnLeft = side === "left";
     document.querySelectorAll<HTMLElement>("[data-pinned-section]").forEach(
         (section) => {
             const title = section.querySelector<HTMLElement>("[data-pinned-title]");
-
-                console.log(title)
+            const color = section.dataset.color;
+            const colorOut = section.dataset.colorOut;
 
             if (!title) return;
+
+            if (color) {
+                gsap.to(section, {
+                    backgroundColor: color,
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top 90%",
+                        end: "top top",
+                        scrub: true,
+                        invalidateOnRefresh: true,
+                    },
+                });
+            }
+
+            if (colorOut) {
+                gsap.to(section, {
+                    backgroundColor: colorOut,
+                    duration: 0.5,
+                    ease: "power1.out",
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "bottom top",
+                        toggleActions: "play none none reverse",
+                    },
+                });
+            }
 
             const media = gsap.matchMedia();
 

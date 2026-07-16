@@ -26,9 +26,13 @@
     "astro-heroicons": "^2.1.5-1",
     "astro-react-i18next": "^0.3.4",
     "astro-robots-txt": "^1.0.0",
+    "daisyui": "^5.6.18",
+    "embla-carousel": "^9.0.0-rc02",
+    "embla-carousel-react": "^9.0.0-rc02",
     "gsap": "^3.15.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
+    "react-snap-carousel": "^0.5.1",
     "tailwindcss": "^4.3.2",
     "vite-plugin-svgr": "^5.2.0"
   },
