@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 export default function ProjectBigCard({
   title,
   description,
@@ -6,6 +8,8 @@ export default function ProjectBigCard({
   image,
   href,
 }) {
+  const { t } = useTranslation()
+
   const content = (
     <article className="gsap-reveal-card group h-full overflow-hidden rounded-2xl border border-alice-blue-400/25 bg-alice-blue-950/35 shadow-sm transition-shadow duration-300 hover:shadow-xl">
       <div className="relative aspect-16/10 overflow-hidden bg-alice-blue-900">
@@ -29,7 +33,7 @@ export default function ProjectBigCard({
         </div>
         <h3 className="mt-4 font-mono text-xl leading-tight text-alice-blue-100">{title}</h3>
         <p className="mt-3 text-sm leading-relaxed text-alice-blue-200">{description}</p>
-        {href && <span className="mt-auto pt-6 text-sm font-medium text-alice-blue-300">View project ↗</span>}
+        {href && <span className="mt-auto pt-6 text-sm font-medium text-alice-blue-300">{t('view-project-label')} ↗</span>}
       </div>
     </article>
   );

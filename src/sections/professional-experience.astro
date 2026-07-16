@@ -26,7 +26,7 @@ const professionalExperiences = i18n.t("experiences", {
         {
             professionalExperiences.map(item => (
                 <TimelineCard 
-                    title={`${item.title} ${item.company ? ` at ${item.company}` : ''}`}
+                    title={`${item.title} ${item.company ? ` ${i18n.t("at-label")} ${item.company}` : ''}`}
                     subtitle={item.period}
                 >
                     <ul class="list-disc space-y-2 pl-5">

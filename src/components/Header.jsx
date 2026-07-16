@@ -35,10 +35,6 @@ export default function Header() {
             name: t("education-label"),
             href: `${urlPrefix}/#education`
         },
-        {
-            name: t("languages-label"),
-            href: `${urlPrefix}/#languages`
-        },
     ]
 
     return (

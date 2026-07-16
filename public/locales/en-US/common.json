@@ -37,5 +37,7 @@
     "languages-and-framework-label": "Languages and Frameworks",
     "datastores-label": "Databases",
     "platform-cloud-label": "Platforms and Cloud",
-    "ai-tools-label": "AI"
+    "ai-tools-label": "AI",
+    "at-label": "at",
+    "view-project-label": "View project"
 }
