@@ -54,7 +54,7 @@ export default function Header() {
                             <a href={i18n.language === 'es-MX' ? '/en-US' : '/'}>
                                 <div className='flex text-xs md:text-base font-mono'>
                                     <LanguageIcon className="w-4 h-4 md:w-6 md:h-6" />
-                                    {i18n.language === 'es-MX' ? 'Español' : ' English'}
+                                    {i18n.language === 'es-MX' ? 'Esp -> Eng' : ' Eng -> Esp'}
                                 </div>
                             </a>
                         </button>
