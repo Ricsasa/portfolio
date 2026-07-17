@@ -10,6 +10,8 @@ import { XMarkIcon, LanguageIcon } from '@heroicons/react/24/outline'
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState('summary');
+    const [mobileTooltip, setMobileTooltip] = useState(null);
     const { t, i18n } = useTranslation()
 
     const urlPrefix = i18n.language === 'es-MX' ? '' : '/en-US'
@@ -36,6 +38,27 @@ export default function Header() {
             href: `${urlPrefix}/#education`
         },
     ]
+
+    React.useEffect(() => {
+        const sections = navigation
+            .map((item) => document.getElementById(item.href.split('#')[1]))
+            .filter(Boolean);
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const visibleSection = entries.find((entry) => entry.isIntersecting);
+
+                if (visibleSection) {
+                    setActiveSection(visibleSection.target.id);
+                }
+            },
+            { rootMargin: '-35% 0px -55% 0px' },
+        );
+
+        sections.forEach((section) => observer.observe(section));
+
+        return () => observer.disconnect();
+    }, [i18n.language]);
 
     return (
         <header>
@@ -113,6 +136,35 @@ export default function Header() {
                     </nav>
                 </div>
             </aside>
+
+            <nav className="dot-navigation" aria-label={t("menu-label")}>
+                <ul>
+                    {navigation.map((item) => {
+                        const sectionId = item.href.split('#')[1];
+                        const isActive = activeSection === sectionId;
+
+                        return (
+                            <li key={sectionId}>
+                                <a
+                                    href={item.href}
+                                    className={`${isActive ? 'is-active' : ''} ${mobileTooltip === sectionId ? 'show-tooltip' : ''}`}
+                                    aria-label={item.name}
+                                    aria-current={isActive ? 'location' : undefined}
+                                    onClick={() => {
+                                        setActiveSection(sectionId);
+                                        setMobileTooltip(sectionId);
+                                        window.setTimeout(() => {
+                                            setMobileTooltip((currentTooltip) => currentTooltip === sectionId ? null : currentTooltip);
+                                        }, 1000);
+                                    }}
+                                >
+                                    <span>{item.name}</span>
+                                </a>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </nav>
         </header>
     )
 }

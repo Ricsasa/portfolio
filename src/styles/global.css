@@ -49,6 +49,123 @@
   }
 }
 
+.dot-navigation {
+  position: fixed;
+  right: 50%;
+  bottom: 1.75rem;
+  z-index: 90;
+  transform: translateX(50%);
+  border: 1px solid color-mix(in srgb, var(--color-alice-blue-400) 35%, transparent);
+  border-radius: 9999px;
+  background-color: color-mix(in srgb, var(--color-alice-blue-950) 76%, transparent);
+  padding: 0.92rem 1.15rem;
+  backdrop-filter: blur(12px);
+}
+
+.dot-navigation ul {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dot-navigation a {
+  position: relative;
+  display: block;
+  width: 1.45rem;
+  height: 1.45rem;
+  border: 3px solid var(--color-alice-blue-400);
+  border-radius: 9999px;
+  transition: border-color 200ms ease, background-color 200ms ease, transform 200ms ease;
+}
+
+.dot-navigation a::after {
+  position: absolute;
+  inset: 3px;
+  border-radius: inherit;
+  background-color: var(--color-alice-blue-400);
+  content: "";
+  transform: scale(0);
+  transition: transform 200ms ease;
+}
+
+.dot-navigation a:hover,
+.dot-navigation a:focus-visible,
+.dot-navigation a.is-active {
+  border-color: var(--color-alice-blue-50);
+  transform: scale(1.15);
+}
+
+.dot-navigation a.is-active::after {
+  transform: scale(1);
+}
+
+.dot-navigation a span {
+  position: absolute;
+  bottom: calc(100% + 1rem);
+  left: 50%;
+  width: max-content;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid color-mix(in srgb, var(--color-alice-blue-400) 35%, transparent);
+  border-radius: 0.5rem;
+  background-color: var(--color-alice-blue-950);
+  color: var(--color-alice-blue-100);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(0.5rem);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.dot-navigation a.show-tooltip span {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (min-width: 768px) {
+  .dot-navigation {
+    top: 50%;
+    right: 2rem;
+    bottom: auto;
+    transform: translateY(-50%);
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    padding: 0;
+    backdrop-filter: none;
+  }
+
+  .dot-navigation ul {
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .dot-navigation a {
+    width: 0.85rem;
+    height: 0.85rem;
+    border-width: 2px;
+  }
+
+  .dot-navigation a::after {
+    inset: 2px;
+  }
+
+  .dot-navigation a span {
+    top: 50%;
+    right: 1.5rem;
+    bottom: auto;
+    left: auto;
+    transform: translateY(-50%) translateX(0.5rem);
+  }
+
+  .dot-navigation a.show-tooltip span {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
 /*
   Embla
 */
