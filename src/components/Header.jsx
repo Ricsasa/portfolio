@@ -77,9 +77,14 @@ export default function Header() {
                                 </div>
                             </a>
                         </button>
-                        <Button className={`group relative inline-flex items-center justify-center rounded-full px-5 py-2.5 font-medium transition-all duration-300 ease-in-out cursor-pointer focus:outline-none focus:ring-2 focus:ring-alice-blue-50/50
+                        <Button
+                            className={`group relative inline-flex items-center justify-center rounded-full px-5 py-2.5 font-medium transition-all duration-300 ease-in-out cursor-pointer focus:outline-none focus:ring-2 focus:ring-alice-blue-50/50
                                 bg-alice-blue-950/10 text-alice-blue-400 hover:bg-alice-blue-50/20 
-                                text-xs md:text-base font-mono`}>
+                                text-xs md:text-base font-mono`}
+                            as="a"
+                            href="/resume/RicardoSanchezCV.pdf"
+                            download="ricardo-sanchez-resume.pdf"
+                        >
                             {t("download-label")}
                         </Button>
                         <Button

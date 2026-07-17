@@ -17,9 +17,9 @@ const isTitleOnLeft = side === "left";
     data-pinned-section
     data-color={color}
     data-color-out={colorOut}
-    class:list={["px-12 py-12", className]}
+    class:list={["px-12 py-20 scroll-mt-4", className]}
 >
-    <div class="grid gap-4 md:grid-cols-2">
+    <div class="grid gap-4 md:grid-cols-2 py-12">
         <div
             data-pinned-title
             class:list={[
@@ -70,19 +70,6 @@ const isTitleOnLeft = side === "left";
                         end: "top top",
                         scrub: true,
                         invalidateOnRefresh: true,
-                    },
-                });
-            }
-
-            if (colorOut) {
-                gsap.to(section, {
-                    backgroundColor: colorOut,
-                    duration: 0.5,
-                    ease: "power1.out",
-                    scrollTrigger: {
-                        trigger: section,
-                        start: "bottom top",
-                        toggleActions: "play none none reverse",
                     },
                 });
             }

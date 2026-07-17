@@ -72,16 +72,16 @@ export const Showcase = () => {
     })
 
     return (
-        <div ref={containerRef} style={{ backgroundColor: '#eff5f6' }} className="bg-alice-blue-50 pt-20">
+        <div ref={containerRef} style={{ backgroundColor: '#eff5f6' }} className="bg-alice-blue-50 ">
 
             <section
                 ref={triggerSectionRef}
                 id="showcase"
-                className="relative min-h-svh w-full overflow-hidden py-12"
+                className="relative min-h-svh w-full overflow-hidden py-20 scroll-mt-4"
                 data-color="#0d1617"
                 data-color-out="#eff5f6"
             >
-                <div className='px-12'>
+                <div className='px-12 py-12'>
 
                     <div
                         className="title-section flex gap-4 border-b border-alice-blue-400 md:mx-auto"
